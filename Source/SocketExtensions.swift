@@ -106,7 +106,7 @@ extension String {
     func toArray() throws -> [Any] {
         guard let stringData = data(using: .utf8, allowLossyConversion: false) else { return [] }
         guard let array = try JSONSerialization.jsonObject(with: stringData, options: .mutableContainers) as? [Any] else {
-             throw JSONError.notArray
+            throw JSONError.notArray
         }
         
         return array
